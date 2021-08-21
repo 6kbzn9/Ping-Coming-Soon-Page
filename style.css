@@ -1,0 +1,109 @@
+:root {
+  --pale-blue: hsl(223, 100%, 88%);
+  --light-red: hsl(354, 100%, 66%);
+  --gray: hsl(0, 0%, 59%);
+  --very-dark-blue: hsl(209, 33%, 12%);
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 15px;
+}
+
+body {
+  font-family: "Libre Franklin", sans-serif;
+  font-weight: 300;
+  color: var(--very-dark-blue);
+}
+
+.wrapper {
+  width: 88%;
+  max-width: 650px;
+  margin: 0 auto;
+  padding: 5rem 0 2rem;
+}
+
+header {
+  text-align: center;
+  padding: 0 0.5rem;
+  margin-bottom: 5rem;
+}
+.logo {
+  width: 90px;
+  margin-bottom: 2rem;
+}
+.title {
+  font-weight: 600;
+  font-size: 1.875rem;
+  margin-bottom: 1rem;
+}
+.title span {
+  font-weight: 300;
+  color: var(--gray);
+}
+.subtitle {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+}
+
+form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+input {
+  width: 100%;
+  padding: 1rem 2rem;
+  border-radius: 2rem;
+  outline: none;
+  font-size: 1rem;
+}
+.email {
+  border: 1px solid var(--pale-blue);
+  color: var(--very-dark-blue);
+  margin-bottom: 1.2rem;
+}
+.email::placeholder {
+  color: var(--pale-blue);
+}
+.submit {
+  color: #fff;
+  border: 1px solid hsl(223, 100%, 60%);
+  background-color: hsl(223, 100%, 60%);
+  cursor: pointer;
+}
+
+.dashboard {
+  width: 100%;
+  margin-bottom: 8rem;
+}
+footer {
+  text-align: center;
+  color: var(--gray);
+}
+.links {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+.icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  margin: 0.5rem;
+  border: 1px solid var(--pale-blue);
+  color: hsl(223, 100%, 60%);
+  transition: 250ms ease-in-out;
+}
+.icon:hover {
+  color: #fff;
+  background-color: hsl(223, 100%, 60%);
+}
