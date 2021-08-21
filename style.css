@@ -4,7 +4,8 @@
   --gray: hsl(0, 0%, 59%);
   --very-dark-blue: hsl(209, 33%, 12%);
 }
-* {
+*,
+*::after {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
@@ -29,11 +30,10 @@ body {
 
 header {
   text-align: center;
-  padding: 0 0.5rem;
   margin-bottom: 5rem;
 }
 .logo {
-  width: 90px;
+  width: 80px;
   margin-bottom: 2rem;
   cursor: pointer;
 }
@@ -55,6 +55,7 @@ form {
   width: 100%;
   display: flex;
   flex-direction: column;
+  position: relative;
 }
 input {
   width: 100%;
@@ -67,6 +68,7 @@ input {
   border: 1px solid var(--pale-blue);
   color: var(--very-dark-blue);
   margin-bottom: 1.2rem;
+  transition: 150ms ease-in-out 100ms;
 }
 .email::placeholder {
   color: var(--pale-blue);
@@ -111,4 +113,73 @@ footer {
 .icon:hover {
   color: #fff;
   background-color: hsl(223, 100%, 60%);
+}
+
+/* invalid cllass */
+.invalid {
+  position: relative;
+}
+.invalid .email {
+  border-color: var(--light-red);
+  margin-bottom: 3rem;
+  transition-delay: 0;
+}
+form::after {
+  content: "Please provide a valid email address";
+  position: absolute;
+  width: 100%;
+  color: var(--light-red);
+  font-style: italic;
+  text-align: center;
+  top: 3.675rem;
+  font-size: 0.85rem;
+  pointer-events: none;
+  transition: 150ms ease-in-out;
+  transition-delay: 0;
+  opacity: 0;
+}
+.invalid::after {
+  opacity: 1;
+  transition-delay: 100ms;
+}
+
+@media screen and (max-width: 350px) {
+  .title {
+    font-size: 1.625rem;
+  }
+  input {
+    padding: 0.825rem 1.825rem;
+  }
+  form::after {
+    top: 3.375rem;
+  }
+}
+
+@media screen and (min-width: 550px) {
+  .title {
+    font-size: 2rem;
+  }
+  form {
+    flex-direction: row;
+  }
+  .email {
+    margin-bottom: 0;
+    margin-right: 1rem;
+    min-width: 320px;
+    max-width: 420px;
+  }
+  .submit {
+    max-width: 200px;
+  }
+  .email,
+  .submit {
+    flex: 1;
+  }
+  form::after {
+    text-align: left;
+    padding-left: 2rem;
+  }
+  .invalid .email {
+    margin-bottom: 0;
+  }
 }
