@@ -1,15 +1,16 @@
-// const form = document.querySelector("#form");
-// const email = document.querySelector("#email");
-// const button = document.querySelector("#submit");
-// let mail = email.value;
-// button.addEventListener("click", (e) => {
-//   e.preventDefault();
-//   form.classList.remove("invalid");
+const form = document.getElementById("form");
+let email = document.getElementById("email");
+const button = document.getElementById("submit");
 
-//   let regx = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-//   let result = mail.match(regx);
+button.addEventListener("click", (e) => {
+  e.preventDefault();
 
-//   if (!result) {
-//     form.classList.add("invalid");
-//   }
-// });
+  let regx =
+    /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/;
+
+  if (!email.value.match(regx)) {
+    form.classList.add("invalid");
+  } else {
+    form.classList.remove("invalid");
+  }
+});

@@ -182,4 +182,11 @@ form::after {
   .invalid .email {
     margin-bottom: 0;
   }
+
+  .email,
+  .invalid .email,
+  form::after,
+  .invalid::after {
+    /* transition-delay: 0; */
+  }
 }
